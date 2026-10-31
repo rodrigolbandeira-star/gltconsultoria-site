@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLT Consultoria Estratégica — Gestão, metas e resultados</title>
+<meta name="description" content="A GLT Consultoria Empresarial ajuda empresas a transformar metas em rotina de gestão: OKR, indicadores, reuniões de acompanhamento, CRM e gestão comercial.">
+<meta property="og:title" content="GLT Consultoria Estratégica">
+<meta property="og:description" content="Metas claras, indicadores acompanhados e rotina de gestão que sustenta o resultado.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --ink: #1c2026;
+    --ink-2: #4a525c;
+    --ink-3: #7a828c;
+    --line: #e3e4e1;
+    --accent: #1f4e63;
+    --accent-ink: #ffffff;
+    --accent-soft: #e6eef1;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  header.top { position: sticky; top: 0; z-index: 10; background: rgba(247,247,245,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 700; letter-spacing: .02em; }
+  .brand img { height: 36px; width: auto; display: block; }
+  nav { display: flex; gap: 26px; }
+  nav a { color: var(--ink-2); text-decoration: none; font-size: 15px; }
+  nav a:hover { color: var(--ink); }
+
+  .hero { padding: 88px 0 72px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; }
+  .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 18px; }
+  h1 { font-size: clamp(32px, 5vw, 50px); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 20px; text-wrap: balance; }
+  .lead { font-size: 19px; color: var(--ink-2); max-width: 34em; margin: 0 0 32px; text-wrap: pretty; }
+  .btn { display: inline-block; background: var(--accent); color: var(--accent-ink); padding: 14px 26px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px; }
+  .btn:hover { filter: brightness(1.1); }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); margin-left: 10px; }
+  .hero-logo { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 28px; }
+  .hero-logo img { width: 100%; height: auto; display: block; }
+
+  section { padding: 76px 0; }
+  section.alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 { font-size: clamp(26px, 3.6vw, 36px); line-height: 1.15; letter-spacing: -.015em; margin: 0 0 14px; text-wrap: balance; }
+  .sub { color: var(--ink-2); max-width: 40em; margin: 0 0 40px; text-wrap: pretty; }
+
+  .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+  section.alt .card { background: var(--bg); }
+  .card h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.3; }
+  .card p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+  .num { display: inline-flex; width: 34px; height: 34px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); font-weight: 700; align-items: center; justify-content: center; margin-bottom: 14px; }
+
+  .product { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .product .card { display: flex; flex-direction: column; gap: 8px; }
+  .tag { align-self: flex-start; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 99px; }
+  .card .more { margin-top: auto; padding-top: 12px; font-weight: 600; font-size: 15px; }
+
+  .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  dl { margin: 0; }
+  dt { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-top: 18px; }
+  dt:first-child { margin-top: 0; }
+  dd { margin: 4px 0 0; font-size: 17px; }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0 44px; color: var(--ink-3); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
+  footer a { color: var(--ink-2); }
+
+  @media (max-width: 760px) {
+    nav { display: none; }
+    .hero { padding: 48px 0 40px; }
+    .hero .wrap, .product, .contact { grid-template-columns: 1fr; gap: 28px; }
+    .hero-logo { order: -1; max-width: 360px; }
+    .btn.ghost { margin: 12px 0 0; }
+    section { padding: 52px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="GLT Consultoria Estratégica"><img src="assets/favicon.png" alt="">GLT Consultoria</a>
+    <nav aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#metodo">Como trabalhamos</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Consultoria estratégica</p>
+        <h1>Metas claras. Indicadores acompanhados. Resultado sustentado.</h1>
+        <p class="lead">A GLT ajuda empresas a transformar a estratégia em rotina de gestão: do desdobramento das metas ao acompanhamento semanal, com método e ferramentas próprias.</p>
+        <a class="btn" href="#contato">Fale com a GLT</a>
+        <a class="btn ghost" href="#servicos">Ver serviços</a>
+      </div>
+      <div class="hero-logo"><img src="assets/logo-glt.png" alt="GLT Consultoria Estratégica"></div>
+    </div>
+  </div>
+
+  <section id="servicos" class="alt">
+    <div class="wrap">
+      <h2>O que fazemos</h2>
+      <p class="sub">Atuamos junto à diretoria e aos times para que cada meta tenha dono, indicador e plano de ação.</p>
+      <div class="grid">
+        <div class="card"><h3>Metas e OKR</h3><p>Desdobramento das metas globais em objetivos e resultados-chave, com responsáveis e prazos definidos.</p></div>
+        <div class="card"><h3>Indicadores e rituais de gestão</h3><p>Painéis de indicadores e reuniões de acompanhamento periódicas para decidir com dados e corrigir a rota a tempo.</p></div>
+        <div class="card"><h3>CRM e gestão comercial</h3><p>Estruturação do processo de vendas, funil, rotinas do time comercial e uso do CRM no dia a dia.</p></div>
+        <div class="card"><h3>Projetos e planos de ação</h3><p>Cronograma, priorização e acompanhamento de projetos até a entrega, com cobrança organizada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="wrap">
+      <h2>Como trabalhamos</h2>
+      <p class="sub">Um ciclo simples, repetido todo mês, que cria disciplina sem burocracia.</p>
+      <div class="grid">
+        <div class="card"><span class="num">1</span><h3>Diagnóstico</h3><p>Entendemos o negócio, os números atuais e onde a empresa quer chegar.</p></div>
+        <div class="card"><span class="num">2</span><h3>Desdobramento</h3><p>Transformamos a meta global em objetivos, indicadores e responsáveis por área.</p></div>
+        <div class="card"><span class="num">3</span><h3>Acompanhamento</h3><p>Reuniões regulares e painel atualizado mostram o que está no caminho e o que não está.</p></div>
+        <div class="card"><span class="num">4</span><h3>Ajuste</h3><p>Revisamos resultados, aprendemos e redefinimos prioridades para o ciclo seguinte.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="produtos" class="alt">
+    <div class="wrap">
+      <h2>Produtos da GLT</h2>
+      <p class="sub">Além da consultoria, desenvolvemos soluções digitais próprias.</p>
+      <div class="product">
+        <div class="card">
+          <span class="tag">Aplicativo</span>
+          <h3>Kronus</h3>
+          <p>Aplicativo educacional que transforma o conteúdo do caderno em quizzes gamificados, com painel de acompanhamento para pais e responsáveis.</p>
+          <a class="more" href="https://rodrigolbandeira-star.github.io/kronus-legal/privacy.html">Política de privacidade do Kronus</a>
+        </div>
+        <div class="card">
+          <span class="tag">Plataforma interna</span>
+          <h3>Painel GLT</h3>
+          <p>Plataforma que usamos com nossos clientes para desdobrar metas, acompanhar indicadores e tarefas e gerar relatórios executivos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="wrap">
+      <h2>Contato</h2>
+      <p class="sub">Conte o desafio da sua empresa. Respondemos em dias úteis.</p>
+      <div class="contact">
+        <dl>
+          <dt>E-mail</dt>
+          <dd><a href="mailto:contato@gltconsultoria.com.br">contato@gltconsultoria.com.br</a></dd>
+          <dt>Telefone / WhatsApp</dt>
+          <dd>(51) 99255-0627</dd>
+          <dt>Atendimento</dt>
+          <dd>Segunda a sexta, em horário comercial</dd>
+        </dl>
+        <dl>
+          <dt>Razão social</dt>
+          <dd>GLT Consultoria Empresarial LTDA</dd>
+          <dt>CNPJ</dt>
+          <dd>46.192.800/0001-52</dd>
+          <dt>Localização</dt>
+          <dd>Rio Grande do Sul, Brasil</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 GLT Consultoria Empresarial LTDA · CNPJ 46.192.800/0001-52</span>
+    <span><a href="https://rodrigolbandeira-star.github.io/kronus-legal/privacy.html">Privacidade (Kronus)</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
